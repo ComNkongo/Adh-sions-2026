@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire d’adhésion – Collectif NKONGÔ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===== EN-TÊTE IDENTIQUE AU VISUEL ===== -->
+    <header class="header">
+        <div class="header-overlay">
+            <div class="header-content">
+
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="img/Logo Nkongô.png" alt="Logo Collectif Nkongô">
+                </div>
+
+                <!-- Titres -->
+                <div class="titles">
+                    <h1>COLLECTIF NKONGÔ</h1>
+                    <h2>FORMULAIRE D’ADHÉSION</h2>
+                </div>
+
+                <!-- Photo 4x4 -->
+                <div class="photo-box">
+                    <span>Photo<br>4X4</span>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== CONTENU ===== -->
+    <main class="container">
+
+        <form action="upload.php" method="POST" enctype="multipart/form-data">
+
+            <section>
+                <h3>I. INFORMATIONS PERSONNELLES</h3>
+
+                <div class="grid">
+                    <input type="text" name="nom" placeholder="Nom" required>
+                    <input type="text" name="prenoms" placeholder="Prénoms" required>
+
+                    <select name="sexe" required>
+                        <option value="">Sexe</option>
+                        <option>Masculin</option>
+                        <option>Féminin</option>
+                    </select>
+
+                    <input type="text" name="naissance" placeholder="Date et lieu de naissance">
+                    <input type="text" name="nationalite" placeholder="Nationalité">
+                    <input type="text" name="profession" placeholder="Profession / Activité">
+                    <input type="tel" name="telephone" placeholder="Téléphone" required>
+                    <input type="email" name="email" placeholder="Email">
+                    <input type="text" name="employeur" placeholder="Employeur / Structure">
+                </div>
+            </section>
+
+            <section>
+                <h3>II. SECTEUR D’IMPLICATION SOUHAITÉ</h3>
+                <div class="checkboxes">
+                    <label><input type="checkbox" name="secteur[]"> Lutte contre la vie chère</label>
+                    <label><input type="checkbox" name="secteur[]"> Protection des consommateurs</label>
+                    <label><input type="checkbox" name="secteur[]"> Préservation de l’environnement</label>
+                    <label><input type="checkbox" name="secteur[]"> Logistique / Organisation</label>
+                    <label><input type="checkbox" name="secteur[]"> Veille citoyenne / Plaidoyer</label>
+                    <label><input type="checkbox" name="secteur[]"> Communication</label>
+                    <label><input type="checkbox" name="secteur[]"> Relations extérieures</label>
+                </div>
+            </section>
+
+            <section>
+                <h3>III. ENGAGEMENT</h3>
+                <label class="agree">
+                    <input type="checkbox" required>
+                    Mention « Lu et approuvé »
+                </label>
+            </section>
+
+            <section>
+                <h3>IV. DROIT À L’IMAGE</h3>
+                <label><input type="radio" name="image" required> J’autorise</label>
+                <label><input type="radio" name="image"> Je n’autorise pas</label>
+            </section>
+
+            <section>
+                <h3>V. COTISATIONS</h3>
+                <p>Carte de membre : <strong>5 000 FCFA</strong></p>
+                <p>Cotisation mensuelle : <strong>2 000 FCFA</strong></p>
+
+                <select name="paiement">
+                    <option>Espèces</option>
+                    <option>Mobile Money</option>
+                </select>
+
+                <input type="text" name="reference" placeholder="Référence de paiement">
+            </section>
+
+            <section>
+                <h3>VI. DOCUMENTS À FOURNIR</h3>
+
+                <label>Copie pièce d’identité</label>
+                <input type="file" name="piece_identite" required>
+
+                <label>Photo d’identité</label>
+                <input type="file" name="photo_identite" required>
+
+                <label>Justificatif de paiement</label>
+                <input type="file" name="preuve_paiement" required>
+            </section>
+
+            <h3>Signature</h3>
+            <canvas id="signature" width="300" height="120"></canvas>
+            <input type="hidden" name="signature" id="signatureData">
+            <button type="button" onclick="saveSignature()">Valider signature</button>
+
+            <button type="submit">SOUMETTRE L’ADHÉSION</button>
+
+        </form>
+    </main>
+
+    <!-- ===== BOUTON WHATSAPP ===== -->
+    <a href="https://wa.me/+24177390801" class="whatsapp" target="_blank"><img src="img/whatapp icon.png" alt=""
+            style="height: 50px;"></a>
+
+    <button onclick="window.print()">🖨️ Imprimer le formulaire</button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

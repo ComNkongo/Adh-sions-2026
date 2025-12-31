@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #f4f6f5;
+}
+
+/* ===== HEADER ===== */
+.header {
+    background: url("images/header-bg.png") center/cover no-repeat;
+    height: 180px;
+}
+
+.header-overlay {
+    background: rgba(255, 255, 255, 0.75);
+    height: 100%;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo img {
+    width: 120px;
+}
+
+.titles {
+    text-align: center;
+    color: #243a8f;
+}
+
+.titles h1 {
+    margin: 0;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+.titles h2 {
+    margin: 5px 0 0;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.photo-box {
+    width: 110px;
+    height: 130px;
+    border: 2px solid #1e8449;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #243a8f;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ===== FORM ===== */
+.container {
+    max-width: 900px;
+    background: #fff;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 6px;
+}
+
+h3 {
+    color: #1e8449;
+    border-bottom: 2px solid #1e8449;
+    padding-bottom: 5px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 8px;
+}
+
+.checkboxes label {
+    display: block;
+    margin: 5px 0;
+}
+
+.agree {
+    font-weight: bold;
+}
+
+button {
+    margin-top: 25px;
+    width: 100%;
+    padding: 12px;
+    background: #1e8449;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* ===== WHATSAPP ===== */
+.whatsapp {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 26px;
+    text-decoration: none;
+}
+
+/* ===== Bouton impression ===== */
+@media print {
+
+    button,
+    .whatsapp {
+        display: none;
+    }
+
+    body {
+        background: white;
+    }
+}
